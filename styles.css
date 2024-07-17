@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+BE+VLG:wght@100..400&family=Playwrite+BE+WAL:wght@100..400&family=Playwrite+PE:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+BE+VLG:wght@100..400&family=Playwrite+BE+WAL:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&family=Playwrite+PE:wght@100..400&family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+BE+VLG:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&family=Playwrite+PE:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+AT:ital,wght@0,100..400;1,100..400&family=Playwrite+BE+VLG:wght@100..400&display=swap');
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --base: #555;
+    --base-100: #f1f1f1;
+    --base-400: #555;
+    --base-800: #000;
+    --yellow: #ffda4b;
+    --yellow-100: #fffbe6;
+    --yellow-400: #ffda4b;
+    --yellow-800: #8b6f00;
+    --blue: #0a61ae;
+    --blue-100: #e2f8ff;
+    --blue-400: #61dafb;
+    --blue-800: #0a61ae;
+}
+
+body {
+    font-family: "Poppins", "sans-serif";
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--blue);
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensures it's above other content */
+    background-color: white; /* Adjust as needed */
+    display: flex;
+    justify-content: space-between;
+    max-width: 1440px;
+    margin: auto;
+    padding: 0 10px; /* Adjust padding as needed */
+}
+
+
+header .logo-holder {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    color: var(--base-800);
+}
+
+header .logo-holder .logo {
+    display: flex;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 64px;
+    width: 64px;
+    margin-right: 10px;
+    border-radius: 50%;
+    font-size: 35px;
+    font-family: "Playwrite PE", cursive;
+}
+
+header .logo-holder .logo-text {
+    display: flex;
+    font-size: 25px;
+    font-family: "Playwrite AT", cursive;   
+}
+
+nav{
+    display: flex;
+    padding: 25px;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    display: inline-block;
+    padding: 10px 25px;
+    color: var(--base);
+}
+
+nav ul li a:hover {
+    background-color: orangered;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #000;
+}
+
+.home{
+    margin-top:30px;
+    background-color: var(--blue-100);
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px;
+    border-radius: 20px;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+.home .content {
+    text-align: center;
+    animation: slideIn 1.5s ease-out forwards;
+}
+
+.home .greet, .name, .description {
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.home .greet{
+    font-size: 40px;
+}
+
+.home .name{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.home .greet {
+    animation-delay: 0.5s;
+}
+
+.home .name {
+    animation-delay: 1s;
+}
+
+.home .description {
+    animation-delay: 1.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.home .resume{
+    color: white;
+    background-color: var(--blue-800);
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    &:hover{
+        text-decoration: none;
+    }
+    transition: background-color 0.3s, transform 0.3s;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.home .home-contact{
+    margin: 10px;
+    background-color: white;
+    padding: 10px 30px;
+    border-radius: 10px;
+    color: black;
+    font-weight: 500;
+    &:hover{
+        text-decoration: none;
+    }
+    transition: background-color 0.2s, transform 0.3s;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.home .description{
+    padding-top: 10px;
+}
+
+.home .resume:hover, .home-contact:hover {
+    background-color: var(--blue-400);
+    transform: scale(1.05);
+}
+
+.home .resume {
+    animation-delay: 2s;
+}
+
+.home .home-contact {
+    animation-delay: 2.5s;
+}
+
+.skills-heading{
+    font-size: 50px;
+}
+
+.skills{
+    padding: 20px 10px;
+    max-width: 1440px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.skills-heading{
+    padding-left: 30px;
+}
+
+.c-svg,.python-svg,.java-svg,.sql-svg,.html-svg,.css-svg,.php-svg,.js-svg,.node-svg,.express-svg,.mongo-svg,.react-svg,.latex-svg,.tableau-svg,.power-bi{
+    margin: 0px 50px;    
+}
+
+@keyframes slideInBottom {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Apply bottom to top slide animation to specific SVGs */
+
+.skills-heading,.c-svg,.python-svg,.java-svg,.sql-svg,.html-svg,.css-svg,.php-svg,.js-svg,.node-svg,.express-svg,.mongo-svg,.react-svg,.latex-svg,.tableau-svg,.power-bi{
+    animation: slideInBottom 4.5s ease-in-out forwards;
+}
+
+.projects {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+.project-heading {
+    font-size: 40px;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(50px); /* Initial position off-screen */
+    animation: slideInBottom 1.5s ease-in-out forwards;
+}
+
+.project-content {
+    margin: 10px 0;
+    background-color: var(--yellow-100);
+    padding: 20px;
+    border-radius: 30px;
+    opacity: 0;
+    transform: translateY(50px); /* Initial position off-screen */
+    animation: slideInBottom 1.5s ease-in-out forwards;
+}
+
+.projects .project-content .project-name {
+    font-size: 40px;
+    font-weight: 500;
+    padding-bottom: 10px;
+}
+
+.projects .project-content .tech-stack {
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+@keyframes slideInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.project-heading, .project-content {
+    animation-delay: 2s; /* Delay for both heading and content */
+}
+
+.contact-details{
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    background-color: var(--blue-100);
+    border-radius: 20px;
+    padding-bottom: 20px;
+}
+
+.contact-heading{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+    padding-top: 20px;
+}
+
+.label{
+    font-size: 20px;
+}
+
+.form-input-name, .form-input-email{
+    margin: 20px 10px;
+    width: 600px;
+    height: 30px;
+}
+
+.form-input-message{
+    width: 1300px;
+    height: 150px;
+}
+
+.form-input-submit{
+    margin-top: 10px;
+    color: white;
+    background-color: orangered;
+    padding: 10px 30px;
+    font-size: 20px;
+    font-weight: 800;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    border: 0px;
+}
+
+input[type="text"], input[type="email"], textarea {
+    font-size: 18px;
+    padding: 0 10px;
+}
+
+textarea{
+    padding-top: 10px;
+}
+
+.contact-details {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    background-color: var(--blue-100);
+    border-radius: 20px;
+    padding-bottom: 10px;
+    animation: slideIn 4.5s ease-in-out forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contact-heading {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+    padding-top: 20px;
+}
+
+.label {
+    font-size: 20px;
+}
+
+.form-input-name,
+.form-input-email {
+    margin: 20px 10px;
+    width: 600px;
+    height: 30px;
+}
+
+.form-input-message {
+    width: 1300px;
+    height: 150px;
+    padding: 10px;
+}
+
+.form-input-submit {
+    margin-top: 10px;
+    color: white;
+    background-color: orangered;
+    padding: 10px 30px;
+    font-size: 20px;
+    font-weight: 800;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 2.5s, transform 2.5s;
+}
+
+.form-input-submit:hover {
+    background-color: #ff7043;
+    transform: scale(1.05); 
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical; /* Allow vertical resizing of textarea */
+}   
+
+.icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.links{
+    padding: 0 20px;
+    &:hover{
+        color: orangered;
+    }
+}
